@@ -7,6 +7,9 @@ var birds
 var hopVel = -7
 var g = .3
 var game_state = false
+var myRec = new p5.SpeechRec();
+myRec.continuous = true;
+
 
 function setup() {
     createCanvas(1100, 500)
@@ -19,6 +22,8 @@ function setup() {
     // snake.addImage(snakeimg)
     birdimg = loadImage("bird2.png")
     birds = new Group()
+    myRec.onResult = check
+    myRec.start()
 }
 
 
@@ -95,5 +100,13 @@ function lose() {
     }
     while(birds.length!=0) {
         birds[0].remove()
+    }
+}
+
+function check(){
+    console.log("here")
+    console.log(myRec.resultString)
+    if(myRec.resultString == "hop"){
+        doHop()
     }
 }
