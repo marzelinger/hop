@@ -7,8 +7,8 @@ var birds
 var hopVel = -7
 var g = .3
 var game_state = false
-var myRec = new p5.SpeechRec();
-myRec.continuous = true;
+// var myRec = new p5.SpeechRec();
+// myRec.continuous = true;
 
 
 function setup() {
@@ -22,8 +22,8 @@ function setup() {
     // snake.addImage(snakeimg)
     birdimg = loadImage("bird2.png")
     birds = new Group()
-    myRec.onResult = check
-    myRec.start()
+    // myRec.onResult = check
+    // myRec.start()
 }
 
 
@@ -103,10 +103,10 @@ function lose() {
     }
 }
 
-function check(){
-    console.log("here")
-    console.log(myRec.resultString)
-    if(myRec.resultString == "hop"){
-        doHop()
-    }
-}
+// function check(){
+//     console.log("here")
+//     console.log(myRec.resultString)
+//     if(myRec.resultString == "hop"){
+//         doHop()
+//     }
+// }
